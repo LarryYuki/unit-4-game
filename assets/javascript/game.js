@@ -1,11 +1,11 @@
-$('document').ready(function () {
-    //$(document).ready(function () {//is there a difference?
-    var randomNum = Math.floor(Math.random() * 101 + 19);
+$(document).ready(function () {
 
-    var diamondRandomNum = Math.floor(Math.random() * 11 + 1);
-    var RubyRandomNum = Math.floor(Math.random() * 11 + 1);
-    var JadeRandomNum = Math.floor(Math.random() * 11 + 1);
-    var EmeraldRandomNum = Math.floor(Math.random() * 11 + 1);
+    var randomNum = Math.floor(Math.random() * 100) + 20;
+
+    var diamondRandomNum = Math.floor(Math.random() * 11) + 1;
+    var RubyRandomNum = Math.floor(Math.random() * 11) + 1;
+    var JadeRandomNum = Math.floor(Math.random() * 11) + 1;
+    var EmeraldRandomNum = Math.floor(Math.random() * 11) + 1;
 
     var wins = 0;
     $('#wins').text(wins)
@@ -16,29 +16,97 @@ $('document').ready(function () {
     var total = 0;
     $('#total').text(total)
 
+    function reset() {
+        diamondRandomNum = Math.floor(Math.random() * 11) + 1;
+        RubyRandomNum = Math.floor(Math.random() * 11) + 1;
+        JadeRandomNum = Math.floor(Math.random() * 11) + 1;
+        EmeraldRandomNum = Math.floor(Math.random() * 11) + 1;
+
+        randomNum = Math.floor(Math.random() * 100) + 20;
+        $('#target').text(randomNum)
+        totalScore = 0;
+        $('#total').text(total);
 
 
-    $(document).on('click', '.button', function () { //event listener for dynamicly created elements
-        // $('button').on('click', function () { //event listener for button clicks
-        console.log($(this))
-        var valueToAdd = $(this).attr('data');
-        total += parseInt(valueToAdd)
-        $('#total').text(total)
-        //console.log(total)
-        if (total === target) {
-            alert('You win');
+    }
 
-        } else if (total > target) {
-            alert('You lost');
+    function youWin() {
+        wins++;
+        $('#wins').text(wins)
+        reset();
+    }
 
-        } else {
-            console.log('you are playing the game')
+    function youLose() {
+        losses++;
+        $('#losses').text(losses)
+        reset();
+    }
+    // ================================
+
+    $('#diamond').on('click', function () {
+        total += diamondRandomNum;
+        console.log(total)
+        $('#total').text(total);
+        if (total === randomNum) {
+            youWin();
+            reset();
+        } else if (total > randomNum) {
+            youLose();
+            reset();
         }
-    })
+    });
+    $('#Ruby').on('click', function () {
+        total += RubyRandomNum;
+        console.log(total)
+        $('#total').text(total);
+        if (total === randomNum) {
+            youWin();
+            reset();
+        } else if (total > randomNum) {
+            youLose();
+            reset();
+        }
+    });
+    $('#Jade').on('click', function () {
+        total += JadeRandomNum;
+        console.log(total)
+        $('#total').text(total);
+        if (total === randomNum) {
+            youWin();
+            reset();
+        } else if (total > randomNum) {
+            youLose();
+            reset();
+        }
+    });
+    $('#Emerald').on('click', function () {
+        total += EmeraldRandomNum;
+        console.log(total)
+        $('#total').text(total);
+        if (total === randomNum) {
+            youWin();
+            reset();
+        } else if (total > randomNum) {
+            youLose();
+            reset();
+        }
+    });
 
-    var crystalArr = [diamondRandomNum, RubyRandomNum, JadeRandomNum, EmeraldRandomNum];
-    console.log(crystalArr)
-    crystalArr.forEach(element => {
-        $('body').append(`<button class='button' data='${element}'>`) //template literals (use `)
-    })
-})
+
+
+
+    // var crystalArr = [diamondRandomNum, RubyRandomNum, JadeRandomNum, EmeraldRandomNum];
+    // var crystalName = ["Diamond", "Ruby", "Jade", "Emerald"];
+    // console.log(crystalArr)
+    // crystalArr.forEach((element, e2) => {
+    //     if (e2 === 0) {
+    //         $(`body`).append(`<button class='button' data=${element}>Diamond</Button>`)
+    //     } else {
+    //         $(`body`).append(`<button class='button' data=${element}>Ruby</Button>`)
+    //     }
+
+
+    // })
+
+
+});
