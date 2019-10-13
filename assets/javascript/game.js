@@ -24,7 +24,7 @@ $(document).ready(function () {
 
         randomNum = Math.floor(Math.random() * 100) + 20;
         $('#target').text(randomNum)
-        totalScore = 0;
+        total = 0;
         $('#total').text(total);
 
 
@@ -49,9 +49,11 @@ $(document).ready(function () {
         $('#total').text(total);
         if (total === randomNum) {
             youWin();
+            alert("you win!")
             reset();
         } else if (total > randomNum) {
             youLose();
+            alert("you loss!")
             reset();
         }
     });
@@ -61,9 +63,11 @@ $(document).ready(function () {
         $('#total').text(total);
         if (total === randomNum) {
             youWin();
+            alert("you win!")
             reset();
         } else if (total > randomNum) {
             youLose();
+            alert("you loss!")
             reset();
         }
     });
@@ -73,9 +77,11 @@ $(document).ready(function () {
         $('#total').text(total);
         if (total === randomNum) {
             youWin();
+            alert("you win!")
             reset();
         } else if (total > randomNum) {
             youLose();
+            alert("you loss!")
             reset();
         }
     });
@@ -85,28 +91,14 @@ $(document).ready(function () {
         $('#total').text(total);
         if (total === randomNum) {
             youWin();
+            alert("you win!")
             reset();
         } else if (total > randomNum) {
             youLose();
+            alert("you loss!")
             reset();
         }
     });
-
-
-
-
-    // var crystalArr = [diamondRandomNum, RubyRandomNum, JadeRandomNum, EmeraldRandomNum];
-    // var crystalName = ["Diamond", "Ruby", "Jade", "Emerald"];
-    // console.log(crystalArr)
-    // crystalArr.forEach((element, e2) => {
-    //     if (e2 === 0) {
-    //         $(`body`).append(`<button class='button' data=${element}>Diamond</Button>`)
-    //     } else {
-    //         $(`body`).append(`<button class='button' data=${element}>Ruby</Button>`)
-    //     }
-
-
-    // })
 
 
 });

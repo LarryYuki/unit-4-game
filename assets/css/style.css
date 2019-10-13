@@ -1,8 +1,48 @@
 .container {
     text-align: center;
-
+    background: url(https://retrostylegames.com/img/2019/06/2d-Illustration-Game-Background-Garden-Bench.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 p {
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.score_container {
+    padding-top: 10px;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.total_score_container {}
+
+.button {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 2px;
+}
+
+.score_container,
+.container,
+.total_score_container {
+    margin: auto;
+}
+
+
+h2,
+h3,
+p {
+    color: rgba(247, 243, 247, 0.918);
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+h1 {
+    color: rgb(226, 116, 43);
+    font-weight: 500;
+    letter-spacing: 3px;
+    font-display: bold;
 }
